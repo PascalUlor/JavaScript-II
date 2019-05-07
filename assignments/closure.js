@@ -17,10 +17,10 @@ const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let counter = 0
   const counterFunction = () => {
-    counter = counter + 1
-     return counter
-   }
-   return counterFunction
+    counter = counter += 1
+    return counter
+  }
+  return counterFunction
 };
 const newCounter = counter();
 console.log(newCounter());
@@ -35,4 +35,21 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let counter = 0;
+  return {
+    increment: () => {
+      counter = counter + 1
+      return counter
+    },
+    decrement: () => {
+      counter = counter - 1
+      return counter
+    }
+  }
 };
+
+let newVar = counterFactory();
+
+console.log(newVar.increment());
+console.log(newVar.increment());
+console.log(newVar.decrement());
