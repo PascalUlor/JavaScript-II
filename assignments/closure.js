@@ -1,13 +1,13 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-const school = (index) => {
-  let students = ['Emmy', 'Johnson', 'Pascal', 'Peta', 'Tygran', 'Melvin'];
+const school = (index, arr) => {
   const getStudent = () => {
-    return students[index];
+    return arr[index];
   }
   return getStudent;
 }
-console.log(school(2)());
+let students = ['Emmy', 'Johnson', 'Pascal', 'Peta', 'Tygran', 'Melvin'];
+console.log(school(4, students)());
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
@@ -47,7 +47,7 @@ const counterFactory = () => {
     }
   }
 };
-
+counterFactory();
 let newVar = counterFactory();
 
 console.log(newVar.increment());
